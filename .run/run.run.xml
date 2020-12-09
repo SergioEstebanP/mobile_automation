@@ -1,0 +1,30 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run" type="GradleRunConfiguration" factoryName="Gradle">
+    <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="AWS_ACCESS_KEY_ID" value="AKIAYD4L2BKNKIJIZ3ER" />
+          <entry key="AWS_SECRET_ACCESS_KEY" value="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" />
+          <entry key="JAVA_HOME" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home" />
+        </map>
+      </option>
+      <option name="executionName" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$" />
+      <option name="externalSystemIdString" value="GRADLE" />
+      <option name="scriptParameters" value="-Dproperties=&quot;properties/android.properties&quot;" />
+      <option name="taskDescriptions">
+        <list />
+      </option>
+      <option name="taskNames">
+        <list>
+          <option value="clean" />
+          <option value="test" />
+          <option value="aggregate" />
+        </list>
+      </option>
+      <option name="vmOptions" value="" />
+    </ExternalSystemSettings>
+    <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+    <method v="2" />
+  </configuration>
+</component>

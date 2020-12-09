@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:2.0.90"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8"
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+version '1.0'
+group 'Zinnio Mobile Automation Framework'
+
+gradle.startParameter.continueOnFailure = true
+
+dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'io.appium:java-client:7.4.1'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation 'net.serenity-bdd:serenity-core:2.0.90'
+    implementation 'net.serenity-bdd:serenity-junit:2.0.90'
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.51'
+    implementation 'net.serenity-bdd:serenity-rest-assured:2.0.90'
+}
+
+// Creates wrapper gradle version.,
+// Usage: ./gradlew
+wrapper {
+    gradleVersion = '6.0'
+}
+
+// Runs functional test under directory src/test.
+// Usage: ./gradlew test
+test {
+    systemProperties System.getProperties()
+    testLogging.showStandardStreams = true
+    test.reports.getHtml().enabled = false
+    test.reports.junitXml.enabled= false
+}
+
+// Creates cucumber.zip file into reports directory.
+// Usage: ./gradlew zipCucumber
+task zipCucumber(type: Zip) {
+    from fileTree(dir: 'target/cucumber/cucumber-html-reports')
+    archiveFileName = 'cucumber-results.zip'
+    destinationDirectory = file('./reports')
+}
+
+// Creates serenity.zip file into reports directory.
+// Usage: ./gradlew zipSerenity
+task zipSerenity(type: Zip) {
+    from fileTree(dir: 'target/site')
+    archiveFileName = 'serenity-results.zip'
+    destinationDirectory = file('./reports')
+}
+
+// Creates documentation project in dir documentation/javadoc.
+// Usage: ./gradlew javadoc
+javadoc {
+  source = sourceSets.test.allJava
+  classpath = sourceSets.test.compileClasspath
+  destinationDir = file("documentation/javadoc")
+}
