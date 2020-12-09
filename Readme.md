@@ -56,7 +56,7 @@ See the file `run.sh` and change ENV variables if need according to your system.
 ./run.sh
 ```
 
-Description: first you have to create a new capabilities set for your execution. In this case the data is set via code in the capabilities handler. But this information could be obtained from a request, from a properties file or from some default configurations and switching between them. Here is just a POC and the use case is the simplest one. But we should change this for the test obiously.
+Description: first you have to create a new capabilities set for your execution, this is made in the file `src/test/java/utils/Utils.java` in the `function DesiredCapabilites(...)`  In this case the data is set via code in the capabilities handler. But this information could be obtained from a request, from a properties file or from some default configurations and switching between them. Here is just a POC and the use case is the simplest one. But we should change this for the test obiously.
 
 ```
 # APPIUM OPTIONS CHANGE ACCORDING TO YOUR DEVICE
