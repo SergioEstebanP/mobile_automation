@@ -95,13 +95,14 @@ Substitute the `192.168.1.xxx` with your device IP address. The last command wil
 ---
 Then you have to attach the device you want to run test into and activate the developers mode. Once its done just type the following command: 
 ```
-./gradlew clean test aggregate -Dproperties="properties/android.properties"
+./gradlew clean test aggregate -Dcucumber.options="--tags @run"
+                            or
+./run.sh
 ```
 - **gradlew**: is an script to download gradle and orchestrate the whole project and dependencies. 
 - **clean**: gradle task to clean build directories and outputs.
 - **test**: gradle task to execute the tests. By default it execute test located in `src/test/resources/features` directory.
 - **aggregate**: gradle task to generate all the reports with serenity.
-- **-Dproperties**: properties files to run the devices
 
 You can debug and run applications remotely and no having the real device attached to the machine using XCode manager. Usually there is no need to configure nothing, when connecting a device then XCode recognise it and allows to you to debug automatically over network via wifi.
 
@@ -129,6 +130,7 @@ Also we can pass several parameters in the command execution for a higher level 
 |:-------------|:----------------------------------------|
 | @android     | Run all tests marked for android devices|
 | @register    | Run tests for Register feature          |
+| @run         | Run the current test for registration   |
 
 
 ---
