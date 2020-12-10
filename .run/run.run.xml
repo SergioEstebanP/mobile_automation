@@ -3,8 +3,6 @@
     <ExternalSystemSettings>
       <option name="env">
         <map>
-          <entry key="AWS_ACCESS_KEY_ID" value="AKIAYD4L2BKNKIJIZ3ER" />
-          <entry key="AWS_SECRET_ACCESS_KEY" value="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" />
           <entry key="JAVA_HOME" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home" />
         </map>
       </option>
